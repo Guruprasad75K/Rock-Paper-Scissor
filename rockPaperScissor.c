@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main() {
-    int n,i,count=1,input,computer,userPoints=0,computerPoints=0;
+    int n,i,input,computer,userPoints=0,computerPoints=0,,count=1;
     char comp[10]="";
     printf("Enter number of rounds:");
     scanf("%d",&n);
@@ -20,6 +20,7 @@ int main() {
             i--;
             continue;
         }
+        //rand() is used to generate Computer's moves
         computer = rand()%(3-1+1)+1;
         
         if (computer == 1) {
@@ -32,7 +33,7 @@ int main() {
             strcpy(comp, "Scissor");
         }
         
-        
+        //Contidionals for pointing
         if((computer==1 && input==1) || (computer==2 && input==2) || (computer==3 && input==3)){
             printf("Computer :%s\n",comp);
             printf("User: %d \t Computer: %d\n",userPoints,computerPoints);
@@ -51,6 +52,8 @@ int main() {
         printf("User: %d \t Computer: %d\n",userPoints,computerPoints);
         count++;
     }
+
+    //Condionals to print the Resuls
     if(userPoints>computerPoints){
         printf("\n\n\t\t\tYou Won!!\n\n\n");
     }
